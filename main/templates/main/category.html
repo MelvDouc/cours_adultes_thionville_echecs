@@ -1,0 +1,15 @@
+{% extends "main/__base.html" %}
+
+{% block content_title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+  {% if lessons %}
+    {% for lesson in lessons %}
+      <div>
+        <a href="{% url 'lesson' lesson.slug %}">{{ lesson.name }}</a>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>Pas encore de lesson.</p>
+  {% endif %}
+{% endblock %}

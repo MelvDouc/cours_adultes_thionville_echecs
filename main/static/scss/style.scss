@@ -1,0 +1,17 @@
+@import "config";
+@import "utils";
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  @extend %main-font;
+  display: flex;
+  flex-direction: column;
+}
+
+@import "header";
+@import "main";
+@import "footer";
+@import "media";

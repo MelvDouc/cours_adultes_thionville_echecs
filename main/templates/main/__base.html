@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png" />
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
+  <script src="{% static 'js/main.js' %}" type="module"></script>
+  <title>{{ title }} — Cours Adultes — Thionville Échecs</title>
+</head>
+<body>
+
+  {% include "./.inc/header.html" %}
+
+  <main>
+    <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
+
+    <div id="main-content">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  {% include "./.inc/footer.html" %}
+</body>
+</html>

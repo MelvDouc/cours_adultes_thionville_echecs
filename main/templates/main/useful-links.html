@@ -1,0 +1,11 @@
+{% extends "main/__base.html" %}
+
+{% block content %}
+  <ul>
+    {% for link in links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.text }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
