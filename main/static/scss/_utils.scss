@@ -18,3 +18,8 @@ $main-gray: #c0c0c0;
   display: grid;
   place-items: center;
 }
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}

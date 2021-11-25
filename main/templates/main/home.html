@@ -2,10 +2,14 @@
 
 {% load static %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/home.min.css' %}">
+{% endblock %}
+
 {% block content_title %}Bienvenue sur le site des cours adultes&nbsp;!{% endblock %}
 
 {% block content %}
-  <div class="float-left">
+  <div id="my-picture">
     <img src="{% static 'img/home/me.jpeg' %}" alt="Melvin DOUCET" />
   </div>
 

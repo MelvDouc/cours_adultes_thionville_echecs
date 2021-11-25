@@ -19,10 +19,12 @@ def calculate_age():
 
 
 def get_std_rating():
-    page = urlopen("https://ratings.fide.com/profile/36067962")
-    html = page.read().decode("utf-8")
-    regex = r'<div class="profile-top-rating-data profile-top-rating-data_gray">\s*<span class="profile-top-rating-dataDesc">std</span>\s*\d{4}\s*</div>'
+    opening_div = '<div class="profile-top-rating-data profile-top-rating-data_gray">'
+    span = '<span class="profile-top-rating-dataDesc">std</span>'
+    regex = f'{opening_div}\s*{span}\s*\d{{4}}\s*</div>'
     try:
+        page = urlopen("https://ratings.fide.com/profile/36067962")
+        html = page.read().decode("utf-8")
         element = re.findall(regex, html)[0]
         return re.findall(r'\d{4}', element)[0]
     except:
