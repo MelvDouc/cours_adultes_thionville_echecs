@@ -14,16 +14,28 @@
 </head>
 <body>
 
-  {% include "./.inc/header.html" %}
+  <header>
+    {% include "./.inc/header.html" %}
+  </header>
 
   <main>
-    <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
+    <div id="sidebar">
+      {% include "./.inc/sidebar.inc.html" %}
+    </div>
 
-    <div id="main-content">
-      {% block content %}{% endblock %}
+    <div id="content">
+      <div id="content_title">
+        <h2>{% block content_title %}{{ title }}{% endblock %}</h2>
+      </div>
+
+      <div id="content_body">
+        {% block content_body %}{% endblock %}
+      </div>
     </div>
   </main>
 
-  {% include "./.inc/footer.html" %}
+  <footer>
+    {% include "./.inc/footer.html" %}
+  </footer>
 </body>
 </html>

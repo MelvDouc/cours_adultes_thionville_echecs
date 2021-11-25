@@ -1,5 +1,6 @@
 header {
   color: white;
+  background: $main-orange;
 
   h1 {
     font-size: 2.2rem;
@@ -9,39 +10,4 @@ header {
       display: inline-block;
     }
   }
-
-  .top {
-    background: $main-orange;
-  }
-
-  nav { 
-    & > ul {
-      display: flex;
-      list-style: none;
-  
-      li, a {
-        @include full-size;
-        @include grid-center;
-      }
-
-      li {
-        background: $main-dark;
-        background: linear-gradient(to right, $main-dark, lighten($main-dark, 8%));
-
-        &:hover {
-          color: $main-dark;
-          background: $main-gray;
-          background: linear-gradient(to left, $main-gray, lighten($main-gray, 10%));
-        }
-      }
-  
-      a {
-        text-align: center;
-        text-decoration: none;
-        font-size: 1.05em;
-        padding: 0.33em;
-      }
-    }
-  }
-
 }

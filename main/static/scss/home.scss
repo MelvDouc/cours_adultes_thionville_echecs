@@ -1,4 +1,10 @@
+@import "utils";
+
 #my-picture {
   float: inline-start;
   margin-inline-end: 1em;
+  
+  img {
+    border: 2px ridge $main-dark;
+  }
 }

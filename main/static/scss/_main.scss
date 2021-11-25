@@ -3,8 +3,8 @@ main {
   height: 100%;
   min-height: calc(100vh - var(--header-height));
   display: grid;
-  grid-template-rows: min-content;
-  background: lighten($main-blue, 22.5%);
+  grid-template-columns: 1fr 5fr;
+  background: $main-bg-blue;
 
   h2 {
     font-size: 1.8rem;
@@ -12,8 +12,12 @@ main {
   }
 }
 
-#main-content {
-  width: 100%;
+#content {
+  @include flex-col;
+}
+
+#content_body {
+  @include full-size;
   max-width: 800px; 
   padding: 1em;
   margin: 0 auto;
