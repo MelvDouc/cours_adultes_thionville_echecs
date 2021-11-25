@@ -1,0 +1,62 @@
+@import "utils";
+
+#contact {
+  @include full-size;
+  @include flex-col;
+  justify-content: center;
+  
+  form {
+    background: $main-orange;
+    padding: 1em;
+    border-radius: 5px;
+    @include flex-col;
+    gap: 1em;
+
+    p {
+      @include flex-col;
+
+      label {
+        margin-bottom: 0.2em;
+        color: white;
+        font-weight: bold;
+        
+        & + input {
+          height: 2em;
+        }
+      }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-family: inherit;
+      font-size: inherit;
+      padding: 0.3em 0.15em;
+    }
+
+    .submit {
+      @include grid-center;
+      padding: 1.5em;
+
+      button {
+        all: unset;
+        cursor: pointer;
+        user-select: none;
+        touch-action: pinch-zoom;
+        text-align: center;
+        @include grid-center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: .4em .55em;
+        border-radius: 9999px;
+        background: blue;
+        color: white;
+        transition: 150ms;
+
+        &:active, &:focus {
+          transform: scale(0.975);
+        }
+      }
+    }
+  }
+}

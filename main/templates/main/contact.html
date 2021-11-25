@@ -1,0 +1,19 @@
+{% extends "main/__base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact.min.css' %}" />
+{% endblock %}
+
+{% block content_body %}
+  <div id="contact">
+    <form action="{% url 'contact' %}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="submit">
+        <button type="submit">Envoyer</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

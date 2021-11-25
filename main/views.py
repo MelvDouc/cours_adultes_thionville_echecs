@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from .forms import MessageForm
 from .models import Category, Lesson
 from .utils import calculate_age, get_std_rating
 
@@ -75,3 +76,18 @@ def usefulLinks(req):
         "title": "Liens utiles",
         "links": links
     })
+
+
+def contact(req):
+    if req.method == "GET":
+        form = MessageForm(label_suffix="")
+        return render(req, "main/contact.html", {
+            "title": "Me contacter",
+            "form": form
+        })
+    form = MessageForm(req.POST)
+    if not form.is_valid():
+        return redirect("/contact")
+    form.save()
+    return redirect("/")
+

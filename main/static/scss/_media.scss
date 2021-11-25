@@ -18,6 +18,21 @@
   }
 }
 
+@media only screen and (max-width: 520px) {
+  main {
+    @include flex-col;
+  }
+  
+  #sidebar ul {
+    flex-direction: row !important;
+    // flex-wrap: wrap;
+
+    > li {
+      width: 100%;
+    }
+  }
+}
+
 @media only screen and (max-width: 350px) {
   #sidebar li > a {
     font-size: 0.95em !important;
