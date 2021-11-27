@@ -10,6 +10,15 @@ body {
   @include flex-col;
 }
 
+.page {
+  @include full-size;
+}
+
+.quote {
+  font-style: italic;
+  display: inline;
+}
+
 @import "header";
 @import "main";
 @import "sidebar";

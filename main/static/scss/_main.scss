@@ -4,7 +4,7 @@ main {
   min-height: calc(100vh - var(--header-height));
   display: grid;
   grid-template-columns: 1fr 5fr;
-  background: $main-bg-blue;
+  // background: $main-bg-blue;
 
   h2 {
     font-size: 1.8rem;
@@ -16,11 +16,20 @@ main {
   @include flex-col;
 }
 
+#content_title {
+  background: $main-blue;
+  color: white;
+}
+
 #content_body {
   @include full-size;
   max-width: 800px; 
   padding: 1em;
   margin: 0 auto;
+
+  h3 {
+    margin-bottom: 0.88em;
+  }
 
   & > section + section {
     margin-top: 1em;

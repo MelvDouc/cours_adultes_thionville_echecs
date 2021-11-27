@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content_body %}
-  <div id="contact">
+  <div class="page" id="contact">
     <form action="{% url 'contact' %}" method="POST">
       {% csrf_token %}
       {{ form.as_p }}

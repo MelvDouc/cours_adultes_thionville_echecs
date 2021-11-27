@@ -1,5 +1,11 @@
 @import "utils";
 
+#home {
+  p + p {
+    margin-top: 0.88em;
+  }
+}
+
 #my-picture {
   float: inline-start;
   margin-inline-end: 1em;
